@@ -50,8 +50,8 @@ app-expansion {
   display: flex;
   flex-flow: column wrap;
   margin-top: $gap-size;
-  position: relative;
   gap: $gap-size;
+  position: relative;
 
   app-expansion {
     width: columnsWidth(1);
