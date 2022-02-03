@@ -16,7 +16,7 @@ import { environment } from '../environments/environment';
     IndexComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
