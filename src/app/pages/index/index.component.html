@@ -1,0 +1,29 @@
+<input type="text" [(ngModel)]="encodedTree" (change)="onChange()" placeholder="Place here tree code or full url from www.pathofexile.com/fullscreen-atlas-skill-tree or poeskilltree.com">
+
+<ng-container *ngIf="stats">
+    
+    <div class="categories" #grid>
+        <ng-container *ngFor="let category of categoried">
+            <app-expansion #gridCell *ngIf="category.stats.length" (onToggle)="onToggle()" [title]="category.key" [icon]="category.img" [show]="true">
+                <li *ngFor="let stat of category.stats">
+                    {{stat}}
+                </li>
+            </app-expansion>
+        </ng-container>
+    </div>
+
+    <app-expansion title="All summed stats">
+        <li *ngFor="let item of stats">
+            {{item}}
+        </li>
+    </app-expansion>
+
+    <app-expansion title="All stats">
+        <ng-container *ngFor="let item of nodes">
+            <li *ngFor="let stat of item.stats">
+                {{stat}}
+            </li>
+        </ng-container>
+    </app-expansion>
+
+</ng-container>

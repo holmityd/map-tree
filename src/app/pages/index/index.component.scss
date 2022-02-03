@@ -1,0 +1,63 @@
+:host{
+    --gap-size: 10px;
+}
+input{
+    width: 100%;
+    background-color: #121212;
+    border: 1px solid #303030;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #fff;
+    box-sizing: border-box;
+}
+.info{
+    display: flex;
+    >div{
+        width: 100%;
+    }
+}
+
+app-expansion{
+    display: block;
+    margin-top: var(--gap-size);
+    li{
+        list-style: none;
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        &:last-child{
+            border:none;
+        }
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+
+@function gaps($base) {
+    @return ($base - 1) / $base;
+}
+
+.categories{
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: var(--gap-size);
+    position: relative;
+    gap: var(--gap-size);
+
+    app-expansion{
+        width: calc(100% - var(--gap-size)*gaps(1));
+        margin-top: 0;
+    }
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px){
+    .categories app-expansion{
+        width: calc(50% - var(--gap-size)*gaps(2));
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .categories app-expansion{
+        width: calc(33.33% - var(--gap-size)*gaps(3));
+    }
+}

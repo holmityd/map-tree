@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="title" (click)="toggle()">
+        <span *ngIf="icon" [class]="icon"></span>
+        <h3>{{title}}</h3>
+        <button>{{show?'close':'open'}}</button>
+    </div>
+    <div *ngIf="show">
+        <ng-content></ng-content>
+    </div>
+</div>
