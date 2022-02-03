@@ -1,0 +1,83 @@
+{
+  "configVersion": 1,
+  "timestamp": 1643854740299,
+  "index": "/map-tree/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/map-tree/favicon.ico",
+        "/map-tree/index.html",
+        "/map-tree/main.ea4f8c99927a000b.js",
+        "/map-tree/manifest.webmanifest",
+        "/map-tree/polyfills.58fa331e3ac10cf6.js",
+        "/map-tree/runtime.e0d3efd78b8c8598.js",
+        "/map-tree/styles.8395cc6c2452b35d.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/map-tree/assets/atlas-mastery-active-1.png",
+        "/map-tree/assets/icons/icon-128x128.png",
+        "/map-tree/assets/icons/icon-144x144.png",
+        "/map-tree/assets/icons/icon-152x152.png",
+        "/map-tree/assets/icons/icon-192x192.png",
+        "/map-tree/assets/icons/icon-384x384.png",
+        "/map-tree/assets/icons/icon-512x512.png",
+        "/map-tree/assets/icons/icon-72x72.png",
+        "/map-tree/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/map-tree/assets/atlas-mastery-active-1.png": "b1a6c368b74d8096f699d706e7b55f9822b23691",
+    "/map-tree/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/map-tree/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/map-tree/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/map-tree/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/map-tree/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/map-tree/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/map-tree/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/map-tree/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/map-tree/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/map-tree/index.html": "a0d3e793640fca0a399b1a5e26968a73526ac405",
+    "/map-tree/main.ea4f8c99927a000b.js": "e5ee04ec4f025793739309ed336a5eda55a2b743",
+    "/map-tree/manifest.webmanifest": "f88f0313a78842622d47d4e2788f4f01385de101",
+    "/map-tree/polyfills.58fa331e3ac10cf6.js": "2b156d643732312500d858444babff8d1b0d7195",
+    "/map-tree/runtime.e0d3efd78b8c8598.js": "1470222de0a33551a6517ea6b5eda966ce2280fa",
+    "/map-tree/styles.8395cc6c2452b35d.css": "78392a1b061823588deeec1cf490643e0786d895"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
