@@ -1,5 +1,13 @@
+$img-size: 288px;
+@mixin define-icon-class($name, $x, $y) {
+  &.#{$name} {
+    background-position-x: calc($img-size * -1 * $x / 6);
+    background-position-y: calc($img-size * -1 * $y / 6);
+  }
+}
+
 .container {
-  background-color: #202020;
+  background-color: var(--secondary-color);
   padding: 10px;
 
   .title {
@@ -13,208 +21,59 @@
     h3 {
       margin: 0;
       padding: 12px;
+      flex: 1;
     }
 
-    button {
-      border: none;
-      background-color: transparent;
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      color: inherit;
-    }
+    svg {
+      width: 14px;
+      height: 16px;
+      margin-right: 10px;
 
-    &:hover {
-      button {
-        text-decoration: underline;
+      &.active {
+        transform: rotate(180deg);
       }
     }
 
     span {
-      // --img-size: 522px;
-      --size: calc(var(--img-size)/6);
-      --img-size: 288px;
-      width: var(--size);
-      height: var(--size);
-      background-size: var(--img-size) var(--img-size);
-      display: inline-block;
-      background-image: url("/map-tree/assets/atlas-mastery-active-1.png");
-
-      &.AtlasPassiveMasteryMap {
-        background-position-x: calc(var(--img-size) * -5 / 6);
-        background-position-y: calc(var(--img-size) * -3 / 6);
-      }
-
-      &.AtlasPassiveMasteryJun {
-        background-position-x: calc(var(--img-size) * -1 / 6);
-        background-position-y: calc(var(--img-size) * -3 / 6);
-      }
-
-      &.AtlasPassiveMasteryStrongbox {
-        background-position-x: calc(var(--img-size) * -5 / 6);
-        background-position-y: calc(var(--img-size) * -4 / 6);
-      }
-
-      &.AtlasPassiveMasteryEssence {
-        background-position-x: calc(var(--img-size) * -2 / 6);
-        background-position-y: calc(var(--img-size) * -2 / 6);
-      }
-
-      &.AtlasPassiveMasteryBestiary {
-        background-position-x: calc(var(--img-size) * -3 / 6);
-        background-position-y: calc(var(--img-size) * -0 / 6);
-      }
-
-      &.AtlasPassiveMasteryMetamorph {
-        background-position-x: calc(var(--img-size) * -0 / 6);
-        background-position-y: calc(var(--img-size) * -4 / 6);
-      }
-
-      &.AtlasPassiveMasteryHarvest {
-        background-position-x: calc(var(--img-size) * -5 / 6);
-        background-position-y: calc(var(--img-size) * -2 / 6);
-      }
-
-      &.AtlasPassiveMasteryKirac {
-        background-position-x: calc(var(--img-size) * -2 / 6);
-        background-position-y: calc(var(--img-size) * -3 / 6);
-      }
-
-      &.AtlasPassiveMasteryBeyond {
-        background-position-x: calc(var(--img-size) * -4 / 6);
-        background-position-y: calc(var(--img-size) * -0 / 6);
-      }
-
-      &.AtlasPassiveMasteryBlight {
-        background-position-x: calc(var(--img-size) * -5 / 6);
-        background-position-y: calc(var(--img-size) * -0 / 6);
-      }
-
-      &.AtlasPassiveMasteryBreach {
-        background-position-x: calc(var(--img-size) * -1 / 6);
-        background-position-y: calc(var(--img-size) * -1 / 6);
-      }
-
-      &.AtlasPassiveMasteryDelve {
-        background-position-x: calc(var(--img-size) * -5 / 6);
-        background-position-y: calc(var(--img-size) * -1 / 6);
-      }
-
-      &.AtlasPassiveMasteryTorment {
-        background-position-x: calc(var(--img-size) * -2 / 6);
-        background-position-y: calc(var(--img-size) * -5 / 6);
-      }
-
-      &.AtlasPassiveMasteryDelirium {
-        background-position-x: calc(var(--img-size) * -4 / 6);
-        background-position-y: calc(var(--img-size) * -1 / 6);
-      }
-
-      &.AtlasPassiveMasteryLegion {
-        background-position-x: calc(var(--img-size) * -4 / 6);
-        background-position-y: calc(var(--img-size) * -3 / 6);
-      }
-
-      &.AtlasPassiveMasteryAbyss {
-        background-position-x: calc(var(--img-size) * -0 / 6);
-        background-position-y: calc(var(--img-size) * -0 / 6);
-      }
-
-      &.AtlasPassiveMasteryScarab {
-        background-position-x: calc(var(--img-size) * -3 / 6);
-        background-position-y: calc(var(--img-size) * -4 / 6);
-      }
-
-      &.AtlasPassiveMasteryVaal {
-        background-position-x: calc(var(--img-size) * -4 / 6);
-        background-position-y: calc(var(--img-size) * -5 / 6);
-      }
-
-      &.AtlasPassiveMasteryRitual {
-        background-position-x: calc(var(--img-size) * -2 / 6);
-        background-position-y: calc(var(--img-size) * -4 / 6);
-      }
-
-      &.AtlasPassiveMasteryDomination {
-        background-position-x: calc(var(--img-size) * -0 / 6);
-        background-position-y: calc(var(--img-size) * -2 / 6);
-      }
-
-      &.AtlasPassiveMasteryTangle {
-        background-position-x: calc(var(--img-size) * -1 / 6);
-        background-position-y: calc(var(--img-size) * -5 / 6);
-      }
-
-      &.AtlasPassiveMasteryAlva {
-        background-position-x: calc(var(--img-size) * -1 / 6);
-        background-position-y: calc(var(--img-size) * -0 / 6);
-      }
-
-      &.AtlasPassiveMasteryExpedition {
-        background-position-x: calc(var(--img-size) * -3 / 6);
-        background-position-y: calc(var(--img-size) * -2 / 6);
-      }
-
-      &.AtlasPassiveMasteryHeist {
-        background-position-x: calc(var(--img-size) * -0 / 6);
-        background-position-y: calc(var(--img-size) * -3 / 6);
-      }
-
-      &.AtlasPassiveMasteryBoss {
-        background-position-x: calc(var(--img-size) * -0 / 6);
-        background-position-y: calc(var(--img-size) * -1 / 6);
-      }
-
-      &.AtlasPassiveMasteryLabyrinth {
-        background-position-x: calc(var(--img-size) * -3 / 6);
-        background-position-y: calc(var(--img-size) * -3 / 6);
-      }
-
-      &.AtlasPassiveMasteryRare {
-        background-position-x: calc(var(--img-size) * -1 / 6);
-        background-position-y: calc(var(--img-size) * -4 / 6);
-      }
-
-      &.AtlasPassiveMasteryHarbinger {
-        background-position-x: calc(var(--img-size) * -4 / 6);
-        background-position-y: calc(var(--img-size) * -2 / 6);
-      }
-
-      &.AtlasPassiveMasteryCleansingFire {
-        background-position-x: calc(var(--img-size) * -2 / 6);
-        background-position-y: calc(var(--img-size) * -1 / 6);
-      }
-
-      &.AtlasPassiveMasteryConqueror {
-        background-position-x: calc(var(--img-size) * -3 / 6);
-        background-position-y: calc(var(--img-size) * -1 / 6);
-      }
-
-      &.AtlasPassiveMasteryElderShaper {
-        background-position-x: calc(var(--img-size) * -1 / 6);
-        background-position-y: calc(var(--img-size) * -2 / 6);
-      }
-
-      &.AtlasPassiveMasterySynthesis {
-        background-position-x: calc(var(--img-size) * -0 / 6);
-        background-position-y: calc(var(--img-size) * -5 / 6);
-      }
-
-      &.AtlasPassiveMasterySextant {
-        background-position-x: calc(var(--img-size) * -4 / 6);
-        background-position-y: calc(var(--img-size) * -4 / 6);
-      }
-
-      &.AtlasPassiveMasteryAnarchy {
-        background-position-x: calc(var(--img-size) * -2 / 6);
-        background-position-y: calc(var(--img-size) * -0 / 6);
-      }
-
-      &.AtlasPassiveMasteryUnique {
-        background-position-x: calc(var(--img-size) * -3 / 6);
-        background-position-y: calc(var(--img-size) * -5 / 6);
-      }
+      width: calc($img-size / 6);
+      height: calc($img-size / 6);
+      background-size: $img-size $img-size;
+      background-image: url("~src/assets/atlas-mastery-active-1.png");
+      @include define-icon-class("AtlasPassiveMasteryMap",5,3);
+      @include define-icon-class("AtlasPassiveMasteryJun",1,3);
+      @include define-icon-class("AtlasPassiveMasteryStrongbox",5,4);
+      @include define-icon-class("AtlasPassiveMasteryEssence",2,2);
+      @include define-icon-class("AtlasPassiveMasteryBestiary",3,0);
+      @include define-icon-class("AtlasPassiveMasteryMetamorph",0,4);
+      @include define-icon-class("AtlasPassiveMasteryHarvest",5,2);
+      @include define-icon-class("AtlasPassiveMasteryKirac",2,3);
+      @include define-icon-class("AtlasPassiveMasteryBeyond",4,0);
+      @include define-icon-class("AtlasPassiveMasteryBlight",5,0);
+      @include define-icon-class("AtlasPassiveMasteryBreach",1,1);
+      @include define-icon-class("AtlasPassiveMasteryDelve",5,1);
+      @include define-icon-class("AtlasPassiveMasteryTorment",2,5);
+      @include define-icon-class("AtlasPassiveMasteryDelirium",4,1);
+      @include define-icon-class("AtlasPassiveMasteryLegion",4,3);
+      @include define-icon-class("AtlasPassiveMasteryAbyss",0,0);
+      @include define-icon-class("AtlasPassiveMasteryScarab",3,4);
+      @include define-icon-class("AtlasPassiveMasteryVaal",4,5);
+      @include define-icon-class("AtlasPassiveMasteryRitual",2,4);
+      @include define-icon-class("AtlasPassiveMasteryDomination",0,2);
+      @include define-icon-class("AtlasPassiveMasteryTangle",1,5);
+      @include define-icon-class("AtlasPassiveMasteryAlva",1,0);
+      @include define-icon-class("AtlasPassiveMasteryExpedition",3,2);
+      @include define-icon-class("AtlasPassiveMasteryHeist",0,3);
+      @include define-icon-class("AtlasPassiveMasteryBoss",0,1);
+      @include define-icon-class("AtlasPassiveMasteryLabyrinth",3,3);
+      @include define-icon-class("AtlasPassiveMasteryRare",1,4);
+      @include define-icon-class("AtlasPassiveMasteryHarbinger",4,2);
+      @include define-icon-class("AtlasPassiveMasteryCleansingFire",2,1);
+      @include define-icon-class("AtlasPassiveMasteryConqueror",3,1);
+      @include define-icon-class("AtlasPassiveMasteryElderShaper",1,2);
+      @include define-icon-class("AtlasPassiveMasterySynthesis",0,5);
+      @include define-icon-class("AtlasPassiveMasterySextant",4,4);
+      @include define-icon-class("AtlasPassiveMasteryAnarchy",2,0);
+      @include define-icon-class("AtlasPassiveMasteryUnique",3,5);
     }
   }
 }

@@ -1,5 +1,18 @@
-:host {
-  --gap-size: 10px;
+$gap-size: 10px;
+@function columnsWidth($base) {
+  @return calc(100% / $base - calc($gap-size*($base - 1) / $base));
+}
+$tablet-width: 768px;
+$desktop-width: 1024px;
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
 }
 
 input {
@@ -9,21 +22,14 @@ input {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: #fff;
+  padding: 10px;
+  color: inherit;
   box-sizing: border-box;
-}
-
-.info {
-  display: flex;
-
-  > div {
-    width: 100%;
-  }
 }
 
 app-expansion {
   display: block;
-  margin-top: var(--gap-size);
+  margin-top: $gap-size;
 
   li {
     list-style: none;
@@ -39,29 +45,26 @@ app-expansion {
     }
   }
 }
-@function gaps($base) {
-  @return calc(($base - 1) / $base);
-}
 
 .categories {
   display: flex;
   flex-flow: column wrap;
-  margin-top: var(--gap-size);
+  margin-top: $gap-size;
   position: relative;
-  gap: var(--gap-size);
+  gap: $gap-size;
 
   app-expansion {
-    width: calc(100% - var(--gap-size)*gaps(1));
+    width: columnsWidth(1);
     margin-top: 0;
   }
 }
-@media only screen and (max-width: 1023px) and (min-width: 768px) {
+@include tablet {
   .categories app-expansion {
-    width: calc(50% - var(--gap-size)*gaps(2));
+    width: columnsWidth(2);
   }
 }
-@media only screen and (min-width: 1024px) {
+@include desktop {
   .categories app-expansion {
-    width: calc(33.33% - var(--gap-size)*gaps(3));
+    width: columnsWidth(3);
   }
 }
