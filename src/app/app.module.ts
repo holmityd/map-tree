@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {ExpansionComponent} from './components/expansion/expansion.component';
-import {IndexComponent} from './pages/index/index.component';
+import { ExpansionComponent } from './components/expansion/expansion.component';
+import { IndexComponent } from './pages/index/index.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 

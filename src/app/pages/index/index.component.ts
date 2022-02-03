@@ -221,9 +221,9 @@ export class IndexComponent implements OnInit {
   masonry(gridGutter = 10, dGridCol = 3, tGridCol = 2, mGridCol = 1) {
     if (!this.grid || !this.gridCell) return;
     let gHeight = 0;
-    let dGrids = document.body.clientWidth >= 1024 ?
+    let dGrids = window.innerWidth >= 1024 ?
       dGridCol :
-      document.body.clientWidth < 1024 && document.body.clientWidth >= 768 ?
+      window.innerWidth < 1024 && window.innerWidth >= 768 ?
         tGridCol : mGridCol;
     this.gridCell.toArray().forEach(item => {
       gHeight += item.nativeElement.offsetHeight + gridGutter;
